@@ -4,7 +4,8 @@
 #include "book.h"
 #include "clothing.h"
 #include "movie.h"
-#include "util.h"
+
+
 using namespace std;
 
 
@@ -130,8 +131,10 @@ std::string ProductBookParser::categoryID()
  */
 Product* ProductBookParser::makeProduct()
 {
-
-
+    // Pointer to created book
+    Product* createdProductPointer = new Book(categoryID(), prodName_, price_, qty_, isbn_, author_);
+    
+    return createdProductPointer;
 }
 
 
@@ -185,9 +188,10 @@ std::string ProductClothingParser::categoryID()
  */
 Product* ProductClothingParser::makeProduct()
 {
-
-
-
+    // Pointer to created clothing
+    Product* createdProductPointer = new Clothing(categoryID(), prodName_, price_, qty_, size_, brand_);
+    
+    return createdProductPointer;
 }
 
 
@@ -245,6 +249,8 @@ std::string ProductMovieParser::categoryID()
  */
 Product* ProductMovieParser::makeProduct()
 {
-
-
+    // Pointer to created movie
+    Product* createdProductPointer = new Movie(categoryID(), prodName_, price_, qty_, genre_, rating_);
+    
+    return createdProductPointer;
 }
